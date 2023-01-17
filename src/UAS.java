@@ -1,23 +1,28 @@
+import java.util.ArrayList;
+    import java.util.Scanner;
 public class UAS {
-
     public static void main(String[] args) {
-        nt jum=4;
-        UAS1D myMessage =  new UAS1D();
+        int jum = 1;
+        UAS myMessage = new UAS();
         Scanner sc = new Scanner(System.in);
-        myMessage.setMessageID(sc.nextLine());
-        myMessage.setMessageName(sc.nextLine());
+        System.out.println("Masukkan ID MESSAGE : ");
+        myMessage.setMESSAGEID(sc.nextLine());
+        System.out.println("Masukkan NAMA Pengirim : ");
+        myMessage.setMESSAGENAME(sc.nextLine());
         ArrayList<String> context = new ArrayList<>();
-        for(int index=0; index<jum;index++){
+        for (int index = 0; index < jum; index++){
             context.add(sc.nextLine());
         }
-        myMessage.setContext(context);
-        //buatlah Method FindWords dalam ClassObject
-        //untuk mencari kata dalam ArrayList Context
-        // dan menampilkan posisi index-nya dalam ArrayList Context
-        System.out.print("Kata yang dicari : ");
+        myMessage.setCONTEXT(context);
+        System.out.println(context.contains(myMessage));
+
+
+        System.out.println("kata yang dicari : ");
         String cari = sc.nextLine();
-        System.out.println(myMessage.FindWords(context,cari));// output "Index ke 0 1 "
+        System.out.println(myMessage.FindWord(context, cari));
+
     }
+}
 
     }
 }
